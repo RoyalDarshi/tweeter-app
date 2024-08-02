@@ -46,24 +46,24 @@ Make sure in mongodb url is
 Base URL: http://localhost:3000/api
 
 1. User Registration
-   endpoint: POST /users/register
-   Description: Create a new user with unique email and password
+   endpoint: POST /users/ .
+   Description: Create a new user with unique email and password.
    Request body: {"email": admin@gmail.com,"password":123456}
 
 2. User Login
-   endpoint: POST /users/login
-   Description: Validate user with email and password and return a unique token
+   endpoint: POST /users/login .
+   Description: Validate user with email and password and return a unique token.
    Request body: {"email": admin@gmail.com,"password":123456}
 
 3. Post Tweet
-   endpoint: POST /tweets
-   Description: Create a tweet of a user
+   endpoint: POST /tweets .
+   Description: Create a tweet of a user.
    Requested body: {"text":"some text","id":"token returned from login user api"}
 
 4. Get all Tweet
-   endpoint: GET /users/:userId/timeline
-   Description: fetch timeline of tweets of a user with cursor based pagination
-   Path Parameter: {userId:"token returned from login user api"}
+   endpoint: GET /users/:userId/timeline .
+   Description: fetch timeline of tweets of a user with cursor based pagination.
+   Path Parameter: {userId:"token returned from login user api"} .
    Query Parameter(optional): {"cursor": 6,limit: 5}
 
 # Contact Information
