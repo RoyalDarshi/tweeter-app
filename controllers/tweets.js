@@ -32,7 +32,7 @@ module.exports.getUserTimeline=async (req,res)=>{
         const cursor=+req.query.cursor;
         const limit=+req.query.limit||10;
         const tweets=await Tweet.find({userId: userId})
-            .skip(cursor?parseInt(cursor):0).limit(limit).sort({createdAt:-1});
+            .skip(cursor?cursor:0).limit(limit);
         let nextCursor=limit;
         if(tweets.length<limit){
             if(cursor){
