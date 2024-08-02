@@ -32,7 +32,7 @@ module.exports.getUserTimeline=async (req,res)=>{
         const cursor=+req.query.cursor;
         const limit=+req.query.limit||10;
         const tweets=await Tweet.find({userId: userId})
-            .skip(cursor?parseInt(cursor):0).limit(limit);
+            .skip(cursor?parseInt(cursor):0).limit(limit).sort({createdAt:-1});
         let nextCursor=limit;
         if(tweets.length<limit){
             if(cursor){
@@ -47,7 +47,7 @@ module.exports.getUserTimeline=async (req,res)=>{
                 nextCursor=limit;
             }
         }
-        res.status(200).send({data:tweets,nextCursor:nextCursor})
+        res.status(200).send({tweets:tweets,nextCursor:nextCursor})
     }catch (err){
         console.log(err)
         res.status(500).send({msg:"Something went wrong while fetching tweets"})
