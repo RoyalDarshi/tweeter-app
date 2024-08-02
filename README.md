@@ -68,5 +68,5 @@ Base URL: http://localhost:3000/api
 
 # Contact Information
 
-Name: Priyadarshi Roy
-email: priyadarshiroy92@gmail.com
+1. Name: Priyadarshi Roy
+2. email: priyadarshiroy92@gmail.com
